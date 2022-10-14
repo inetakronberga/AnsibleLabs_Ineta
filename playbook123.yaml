@@ -1,0 +1,9 @@
+---
+
+- name: Echo
+  hosts: all
+  tasks:
+  
+    - name: Print text
+      debug:
+        msg: "{{text}}"
