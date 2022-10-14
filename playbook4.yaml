@@ -1,0 +1,14 @@
+---
+
+- name: Echo
+  hosts: "{{host}}"
+  tasks:
+ 
+    - name: Create directory
+      file:
+        path: /tmp/%KRONBERGA%/java_dns
+        state: directory  
+    - name: Download source
+      get_url: url=https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.0/dnsjava-3.5.0.jar dest=/tmp/test/java_dns
+      
+ 
