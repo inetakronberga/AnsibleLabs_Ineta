@@ -1,0 +1,20 @@
+
+- name: Echo
+  hosts: "{{host}}"
+  tasks:
+ 
+    - name: Create directory
+      file:
+        path: /tmp/%KRONBERGA%/java_dns
+        state: directory  
+    - name: ansible create gradle
+      file:
+       path: /tmp/%KRONBERGA%/gradle
+       state: directory
+    - name: Download source
+      get_url: url=https://repo1.maven.org/maven2/dnsjava/dnsjava/3.5.0/dnsjava-3.5.0.jar dest=/tmp/test/java_dns
+    - name: dpwnload gradle
+      get_url: url=https://services.gradle.org/distributions/
+    - name: Unarchive a file that is already on the remote machine
+      ansible.builtin.unarchive: src=/tmp/dmitrijs/gradle-8.0-milestone-2-docs.zip dest=/tmp/dmitrijs/gradle remote_src=yes
+ 
