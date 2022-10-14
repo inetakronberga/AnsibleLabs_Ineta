@@ -8,6 +8,6 @@
       debug:
         msg: "{{text}}"
     - name: Create directory
-    file:
-      path: /tmp/KRONBERGA/java_dns/
-      state: directory    
+      file:
+       path: /tmp/KRONBERGA/java_dns/
+       state: directory    
